@@ -1,0 +1,39 @@
+
+:root {
+    --bgColor: #1B9C84;
+    --bodyBgColor: #BAE7EA;
+    --contrastColor: #00483B;
+    --mainDivBg: rgba(27, 156, 132, 0.2);
+    --negativeColor: rgba(255, 163, 79, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family: 'Poppins';
+    font-style: normal;
+    outline: none;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: var(--bgColor);
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--bgColor);
+    border-radius: 10px;
+    border: 2px solid white;
+}

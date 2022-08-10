@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link rel="stylesheet" href="./css/main.css">
+    <title>SGE</title>
+    <style>
+        body {
+            background: var(--bodyBgColor);
+            overflow: hidden;
+        }
+
+        .sidePanel {
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            left: -50%;
+            background: var(--bgColor);
+            overflow: hidden;
+            transition: left 2s;
+        }
+
+        .sidePanel .text {
+            position: relative;
+            color: white;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center; 
+            text-shadow: 0 0 5px var(--bgColor),
+                         0 0 5px var(--bgColor),
+                         0 0 5px var(--bgColor),  
+                         0 0 5px var(--bgColor), 
+                         0 0 5px var(--bgColor);
+            z-index: 2;
+        }
+
+        .sidePanel .logo {
+            font-size: 100px;
+        }
+
+        .sidePanel .alignRight {
+            width: 100%;
+            text-align: right;
+            padding-right: 15%;
+            font-size: 32px;
+        }
+
+        .sidePanel .detail {
+            position: absolute;
+            height: 102%;
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .sidePanel.right {
+            width: 50%;
+            left: 25%;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+
+        .loginFloat {
+            background: var(--bgColor);
+            padding: 50px;
+            border-radius: 50px;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+        }
+        .loginFloat .title {
+            color: white;
+            width: 100%;
+            border: 2px solid white;
+            padding: 10px;
+            --paddingTitleLR: 20px;
+            padding-left: var(--paddingTitleLR);
+            padding-right: var(--paddingTitleLR);
+            margin-bottom: 40px;
+            border-radius: 30px;
+            text-align: center;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+
+        .loginFloat .input {
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 40px;
+            text-align: center;
+            color: var(--contrastColor);
+            margin-bottom: 15px;
+        }
+
+        .loginFloat .input.button {
+            background: var(--contrastColor);
+            color: white;
+            transition: .5s;
+            cursor: pointer;
+        }
+        .loginFloat .input.button:hover {
+            background: white;
+            color: var(--contrastColor);
+        }
+        .loginFloat a {
+            color: #FF8F8F;
+            font-size: 13px;
+        }
+        .loginFloat a:hover{
+            color: #ffebeb;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidePanel">
+        <div class="text">
+            <h1 class="logo">SGE</h1>
+            <div class="alignRight">
+                <p>SISTEMA <br> GERENCIADOR DE <br> ESTOQUE</p>
+            </div>
+        </div>
+        <svg class="detail" viewBox="0 0 243 568" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.07931 1.42995L99.8559 40.1885L58.9612 92.4383L71.2766 192.187L4.76756 230.258L100.499 253.714L92.5951 288.941L71.8557 384.561L84.1655 482.295L242.078 566.174" stroke="white" stroke-width="3"/>
+        </svg>
+    </div>  
+    
+    <div class="sidePanel right">
+        <div class="loginFloat">
+            <h1 class="title">LOGIN</h1>
+            <input id="login" class="input" type="text" placeholder="Login">
+            <input id="password" class="input" type="password" placeholder="Senha">
+            <button id="loginButton" class="input button">Entrar</button>
+            <a href="./">Esqueceu a senha?</a> <!-- ir para tela de login -->
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector(".sidePanel.right").style.left = "50%";
+        document.querySelector(".sidePanel").style.left = "0%";
+    });
+    document.querySelector("#loginButton").addEventListener("click", () => {
+        document.location = "./pages/main.html";
+    });
+</script>
+</html>
